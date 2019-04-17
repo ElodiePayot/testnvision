@@ -24,3 +24,13 @@ h1 {
     span {font-size: 2rem;}
   }
 }
+
+h2 {
+  color: $secondary;
+  letter-spacing: 0.5px;
+}
+
+h3 {
+  color: $secondary;
+  font-weight: 600;
+}

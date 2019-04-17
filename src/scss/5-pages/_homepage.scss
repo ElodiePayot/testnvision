@@ -6,9 +6,27 @@
   position: relative;
   height: 90vh;
   top: -129px;
+  z-index: 1;
   @include media-breakpoint-down(sm) {
     height: calc(100vh + 129px);
     .container {margin-top: 129px;}
+  }
+  .wave {
+    position: absolute;
+    left: calc(100vw/2 - 1170px/2);
+    width: 540px;
+    bottom: -54px;
+    transform: rotate(4deg);
+    @include media-breakpoint-down(lg) {
+      left: calc(100vw/2 - 960px/2);
+      width: 500px;
+      bottom: -50px;
+    }
+    @include media-breakpoint-down(md) {
+      left: calc(100vw/2 - 720px/2);
+      width: 450px;
+      bottom: -45px;
+    }
   }
   .chat-bot {
     position: absolute;
@@ -34,6 +52,85 @@
       right:30px;
       bottom: 30px;
       position: fixed;
+    }
+  }
+}
+
+
+.section-wave {
+  position: relative;
+  background-color: #f1f4fb;
+  margin-top: -129px;
+  padding: 160px 0 20px 0;
+  .col-12 {padding: 0 10px;}
+  .col-xl-6 {
+    h3 {
+      margin-top: 33px; //titre à la même hauteur que les cards avec icones
+    }
+  }
+  .btn-light {margin: 100px auto 0 auto !important;}
+  .wave {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    @include media-breakpoint-down(md) {
+      height: 100px;
+    }
+  }
+}
+
+.section-last-minute {
+  padding: 200px 0;
+  h2 {
+    position: relative;
+    &::before {
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+      content: "";
+      background-image: url("../img/before-lastminute.png");
+      width: 450px;
+      background-size: cover;
+      height: 220px;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      position: absolute;
+    }
+    &::after {
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+      content: "";
+      background-image: url("../img/after-lastminute.png");
+      right: 56px;
+      width: 400px;
+      background-size: cover;
+      height: 219px;
+      bottom: -31px;
+      z-index: -1;
+      position: absolute;
+    }
+  }
+}
+
+.inspiring-section {
+  height: 650px;
+  .col-lg-6 {
+    &:first-child {
+      background-color: #f1f4fb;
+    }
+    &:last-child {
+      background-image: url("../img/img-inspiring-square.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      p {font-weight: 200;}
+      img {
+        max-width: 60px;
+      }
     }
   }
 }
