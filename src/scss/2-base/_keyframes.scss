@@ -1,0 +1,41 @@
+@-webkit-keyframes lighten {
+  from { opacity: 0.9; }
+	to { opacity: 0.8; }
+}
+@-moz-keyframes lighten {
+  from { opacity: 0.9; }
+	to { opacity: 0.8; }
+}
+@-ms-keyframes lighten {
+  from { opacity: 0.9; }
+	to { opacity: 0.8; }
+}
+@-o-keyframes lighten {
+  from { opacity: 0.9; }
+	to { opacity: 0.8; }
+}
+@keyframes lighten {
+  from { opacity: 0.9; }
+	to { opacity: 0.8; }
+}
+
+@-webkit-keyframes darken {
+  from { opacity: 0.9; }
+	to { opacity: 1;}
+}
+@-moz-keyframes darken {
+  from { opacity: 0.9; }
+	to { opacity: 1; }
+}
+@-ms-keyframes darken {
+  from { opacity: 0.9; }
+	to { opacity: 1; }
+}
+@-o-keyframes darken {
+  from { opacity: 0.9; }
+	to { opacity: 1; }
+}
+@keyframes darken {
+  from { opacity: 0.9; }
+	to { opacity: 1; }
+}
