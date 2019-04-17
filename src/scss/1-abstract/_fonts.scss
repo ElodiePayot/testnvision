@@ -1,4 +1,7 @@
 @font-face {
- font-family: "Caveat";
- src: url("../fonts/CaveatBrush-Regular.ttf") format("ttf");
+	font-family: 'Caveat';
+	src: url('../fonts/CaveatBrush-Regular.eot');
+	src: local('☺'), url('../fonts/CaveatBrush-Regular.woff') format('woff'), url('../fonts/CaveatBrush-Regular.ttf') format('truetype'), url('../fonts/CaveatBrush-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }

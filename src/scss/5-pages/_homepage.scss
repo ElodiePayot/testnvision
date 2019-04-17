@@ -1,0 +1,39 @@
+.section-1 {
+  background-image: url("../img/img-keyvisual.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  position: relative;
+  height: 90vh;
+  top: -129px;
+  @include media-breakpoint-down(sm) {
+    height: calc(100vh + 129px);
+    .container {margin-top: 129px;}
+  }
+  .chat-bot {
+    position: absolute;
+    right: calc(100vw/2 - 1170px/2);
+    bottom: -18px;
+    height: 40px;
+    width: 110px;
+    border-radius: 50px;
+    p {font-size: $font-size-sm;}
+    img {
+      max-width: 30px;
+    }
+    @include media-breakpoint-down(lg) {
+      right: calc(100vw/2 - 960px/2);
+    }
+    @include media-breakpoint-down(md) {
+      right: calc(100vw/2 - 720px/2);
+    }
+    @include media-breakpoint-down(sm) {
+      right: calc(100vw/2 - 540px/2);
+    }
+    @include media-breakpoint-down(xs) {
+      right:30px;
+      bottom: 30px;
+      position: fixed;
+    }
+  }
+}

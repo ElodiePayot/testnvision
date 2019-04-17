@@ -40,8 +40,8 @@ export function styles() {
   return gulp.src('src/scss/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
-    //.pipe(cssmin())
-    //.pipe(rename({suffix: '.min'}))
+    .pipe(cssmin())
+    .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('build/css'));
 }
@@ -58,25 +58,20 @@ export function script() {
 
 
 //copier
-export function copy() {
-  return gulp.src(['src/img','src/fonts'])
-  .pipe(gulp.dest('build'))
+export function copyImg() {
+  return gulp.src('src/img/**')
+  .pipe(gulp.dest('build/img'))
 }
 
-export function copyBScss() {
-  return gulp.src(['node_modules/bootstrap/dist/css/bootstrap.min.css','node_modules/bootstrap/dist/css/bootstrap.min.css.map'])
-    .pipe(gulp.dest('build/css'));
-}
-
-export function copyBSjs() {
-  return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js','node_modules/bootstrap/dist/js/bootstrap.min.js.map', 'node_modules/jquery/dist/jquery.min.js', 'node_modules/jquery/dist/jquery.min.map'])
-    .pipe(gulp.dest('build/js'));
+export function copyFonts() {
+  return gulp.src('src/fonts/**')
+  .pipe(gulp.dest('build/fonts'))
 }
 
 
 // Fonction qui permet de construire le projet
 export function build(done) {
-  return gulp.series('styles','script', 'includes', 'copy', 'copyBScss', 'copyBSjs')(done);
+  return gulp.series('styles','script','includes','copyImg','copyFonts')(done);
 }
 
 

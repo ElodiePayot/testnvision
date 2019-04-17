@@ -1,14 +1,15 @@
 
 //Bootstrap Theming
 
-$theme-colors: (
-  "primary": #ffb400,
-  "danger": #ff4136
-);
 
+$primary: #ffb400;
+$secondary: #035066;
+$body-color: white;
 // Fonts
 
-$font-family-sans-serif: "Open Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-sans-serif: "Open Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace: "Caveat";
+
 
 $font-size-base: 1.375rem;
 $font-size-lg: 1.5625rem;
@@ -17,7 +18,7 @@ $font-weight-normal: normal;
 $font-weight-bold: bold;
 $font-weight-base: $font-weight-normal;
 $line-height-base: 1.5;
-$h1-font-size: 2.5rem;
+$h1-font-size: 5rem;
 $h2-font-size: 2rem;
 $h3-font-size: 1.75rem;
 $h4-font-size: 1.5rem;
