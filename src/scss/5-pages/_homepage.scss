@@ -1,4 +1,7 @@
-html, body {scroll-behavior: smooth;}
+html, body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 .section-1 {
   background-image: url("../img/img-keyvisual.png");

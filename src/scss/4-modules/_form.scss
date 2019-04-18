@@ -29,9 +29,7 @@
     border-radius: 0;
     font-size: $font-size-sm;
     padding-left: 0.2rem;
-    &::placeholder {
-      color: white;
-    }
+    @include placeholder {color: white;}
     &:focus {
       background-color: inherit;
       box-shadow: none;
@@ -70,12 +68,13 @@
     border-right: 0;
     background-color: transparent;
     max-width: 70%;
-    &::placeholder {
-      color: #0dafbf;
-    }
+    @include placeholder {color: #0dafbf;}
     &:focus {
       background-color: inherit;
       box-shadow: none;
+      outline: 0;
+      border: 1px solid #0dafbf !important;
+      border-right: 0 !important;
     }
   }
   .btn {border-left: 0;}

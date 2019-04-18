@@ -86,8 +86,10 @@
   display: none !important;
   @include transition(0.4s);
   &.active {
-    display: block !important;
-    @include transition(0.4s);
+    @include media-breakpoint-down(xs) {
+      display: block !important;
+      @include transition(0.4s);
+    }
   }
   a {
     opacity: 0.8;

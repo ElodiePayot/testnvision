@@ -1,6 +1,6 @@
 
 
-import gulp from 'gulp'; // pareil que var gulp = require('gulp')
+import gulp from 'gulp';
 import sass from 'gulp-sass';
 import rename from 'gulp-rename';
 import cssmin from 'gulp-cssmin';
@@ -11,14 +11,6 @@ import sourcemaps from 'gulp-sourcemaps';
 
 
 
-/*
-  export permet d'utiliser la fonction cleanBuild dans le (gulp cleanBuild) si on n'a pas "export" devant "function" on aura un message d'erreur qui nous dit que la fonction n'existe pas.
-
-  On utilise la syntaxe de function() et non plus gulp.task car c'est la nouveauté de gulp 4. Mais on peut toujours utiliser gulp.task, le résultat sera le même
-*/
-
-
-// Déplaces le fichier html edité dans le dossier build
 export function includes() {
   return gulp.src(['src/*.html'])
     .pipe(fileinclude({
@@ -28,14 +20,11 @@ export function includes() {
     .pipe(gulp.dest('build'))
 }
 
-// Fonction qui permet d'actualiser le serveur web. le done() indique que la tâche est terminée, sinon ça tourne dans le vide...
 export function reload(done) {
   browserSync.reload();
   done();
 }
 
-
-// Fonction (tâche) qui va permettre à la fois de transformer le SASS en CSS puis de le minifier puis de le mettre dans le dossier build.
 export function styles() {
   return gulp.src('src/scss/**/*.scss')
     .pipe(sourcemaps.init())
@@ -46,8 +35,6 @@ export function styles() {
     .pipe(gulp.dest('build/css'));
 }
 
-//faire une tâche script et le mettre dans build et serve
-
 export function script() {
   return gulp.src('src/js/main.js')
     .pipe(jsmin())
@@ -56,8 +43,6 @@ export function script() {
 }
 
 
-
-//copier
 export function copyImg() {
   return gulp.src('src/img/**')
   .pipe(gulp.dest('build/img'))
@@ -69,13 +54,11 @@ export function copyFonts() {
 }
 
 
-// Fonction qui permet de construire le projet
 export function build(done) {
   return gulp.series('styles','script','includes','copyImg','copyFonts')(done);
 }
 
 
-// Fonction qui permet de lancer un serveur web
 export function serve(done) {
   browserSync({
       server: "build/"
@@ -87,7 +70,6 @@ export function serve(done) {
   done();
 }
 
-// fonction par defaut de gulp (elle a le 'default' en plus) il suffit juste de taper gulp dans le terminal pour lancer cette tache
 export default function test(done) {
   return gulp.series('build', 'serve')(done);
 }
