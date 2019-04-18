@@ -1,3 +1,5 @@
+html, body {scroll-behavior: smooth;}
+
 .section-1 {
   background-image: url("../img/img-keyvisual.png");
   background-repeat: no-repeat;
@@ -7,6 +9,24 @@
   height: 90vh;
   top: -129px;
   z-index: 1;
+  .btn {
+    &.btn-primary {
+      @include transition(0.4s);
+      &:hover {
+        @include transition(0.4s);
+        color: $primary !important;
+        background-color: white;
+        border: 1px solid white;
+      }
+    }
+    &.btn-outline-light {
+      @include transition(0.4s);
+      &:hover {
+        @include transition(0.4s);
+        color: $primary;
+      }
+    }
+  }
   @include media-breakpoint-down(sm) {
     height: calc(100vh + 129px);
     .container {margin-top: 129px;}
@@ -29,13 +49,21 @@
     }
   }
   .chat-bot {
+    &:hover {
+      text-decoration: none;
+      background-color: $primary !important;
+      opacity: 0.9;
+    }
     position: absolute;
     right: calc(100vw/2 - 1170px/2);
     bottom: -18px;
     height: 40px;
     width: 110px;
     border-radius: 50px;
-    p {font-size: $font-size-sm;}
+    p {
+      font-size: $font-size-sm;
+      color: white !important;
+    }
     img {
       max-width: 30px;
     }
@@ -51,7 +79,6 @@
     @include media-breakpoint-down(xs) {
       right:30px;
       bottom: 30px;
-      position: fixed;
     }
   }
 }
@@ -62,6 +89,7 @@
   background-color: #f1f4fb;
   margin-top: -129px;
   padding: 160px 0 20px 0;
+  @include media-breakpoint-down(md) {padding: 65px 0 20px 0;}
   .col-12 {padding: 0 10px;}
   .col-xl-6 {
     h3 {
@@ -80,7 +108,8 @@
 }
 
 .section-last-minute {
-  padding: 200px 0;
+  padding: 200px 0 130px;
+  @include media-breakpoint-down(md) {padding: 120px 0 65px;}
   h2 {
     position: relative;
     &::before {
@@ -116,9 +145,20 @@
 
 .inspiring-section {
   height: 650px;
-  .col-lg-6 {
+  @include media-breakpoint-down(lg) {
+    height: auto;
+    .row {
+      flex-direction: column-reverse;
+      flex-wrap: nowrap;
+      max-width: 100vw;
+      margin: 0;
+    }
+  }
+  .col-xl-6 {
     &:first-child {
       background-color: #f1f4fb;
+      @include media-breakpoint-down(lg) {padding-top: 500px;}
+      @include media-breakpoint-down(sm) {height: 790px;}
     }
     &:last-child {
       background-image: url("../img/img-inspiring-square.png");
@@ -127,10 +167,28 @@
       text-align: center;
       display: flex;
       align-items: center;
+      overflow-x: hidden;
+      @include media-breakpoint-down(lg) {
+        background-position: center;
+        height: 300px;
+      }
       p {font-weight: 200;}
       img {
         max-width: 60px;
       }
     }
+  }
+}
+
+.scheme-section {
+  padding: 100px 0;
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+    h2 ~ p {font-size: 1.2rem !important;}
+  }
+  h2 ~ p {
+    margin-top: 20px;
+    color: $secondary !important;
+    font-size: 1.6rem;
   }
 }

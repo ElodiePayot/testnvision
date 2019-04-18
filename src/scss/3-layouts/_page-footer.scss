@@ -1,3 +1,62 @@
-
-
- 
+.page-footer {
+  padding: 50px 0;
+  background-color: #f1f4fb;
+  a, span, p {color: #0dafbf;}
+  .footer-infos {
+    a, span {vertical-align: middle;}
+    img {max-width: 200px;}
+    a {
+      font-size: $font-size-lg;
+      color: $primary;
+      font-weight: 600;
+      @include media-breakpoint-down(sm) {display: block;}
+    }
+    span {
+      font-weight: 200;
+      font-size: 1.2rem;
+      white-space: nowrap;
+    }
+  }
+  .nav-link {
+    font-weight: 200;
+    font-size: 1rem;
+    padding: 0.1rem !important;
+  }
+  .nav-social {
+    .nav-item {
+      padding-right: 10px;
+      i {font-size: 1.3rem;}
+    }
+  }
+  .footer-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 30px;
+    @include media-breakpoint-down(lg) {margin: 15px 0;}
+  }
+  .paiement-infos {
+    img {height: 50px;}
+  }
+  .legal-infos {
+    a, span {
+      color: #035066;
+      font-size: 0.9rem;
+    }
+    a {
+      font-weight: 600;
+      margin-right: 5px;
+    }
+  }
+  .row-infos {
+    margin-top: 30px;
+    @include media-breakpoint-down(lg) {
+      margin: 20px 0;
+      flex-direction: column-reverse;
+      .legal-infos, .paiement-infos {padding-left: 0;}
+    }
+    .paiement-infos {
+      span {font-size: 1.2rem;}
+    }
+  }
+}

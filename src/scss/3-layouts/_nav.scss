@@ -28,10 +28,8 @@
 }
 
 .nav-primary {
-
   @include media-breakpoint-down(sm) {
     padding-top: 10px;
-    position: fixed;
     width: 100%;
     background-color: white;
     .nav-link {
@@ -77,4 +75,32 @@
     }
   }
   .nav-lang {img {max-width: 30px;}}
+}
+
+.top-link {
+  position: fixed;
+  left: 10px;
+  top: 5px;
+  z-index: 3;
+  cursor: pointer;
+  display: none !important;
+  @include transition(0.4s);
+  &.active {
+    display: block !important;
+    @include transition(0.4s);
+  }
+  a {
+    opacity: 0.8;
+    color: $white;
+    font-size: 1rem;
+    background-color: $teal-blue;
+    font-weight: 200;
+    border-radius: 30px;
+    display: block;
+    padding: 0.3rem;
+    &:hover {
+      background-color: $secondary;
+      text-decoration: none;
+    }
+  }
 }
