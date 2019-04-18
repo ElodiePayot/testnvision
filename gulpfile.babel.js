@@ -10,7 +10,6 @@ import jsmin from 'gulp-jsmin';
 import sourcemaps from 'gulp-sourcemaps';
 
 
-
 export function includes() {
   return gulp.src(['src/*.html'])
     .pipe(fileinclude({

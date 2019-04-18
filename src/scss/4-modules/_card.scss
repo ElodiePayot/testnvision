@@ -70,11 +70,13 @@
       }
       .card-title {color: $primary;}
       .card-link {
-        @include transition(0.3s);
-        &:hover {
-          background-color: $primary !important;
-          color: $gray-200 !important;
+        &.btn {
           @include transition(0.3s);
+          &:hover {
+            background-color: $primary !important;
+            color: $gray-200 !important;
+            @include transition(0.3s);
+          }
         }
       }
       .link-offer {

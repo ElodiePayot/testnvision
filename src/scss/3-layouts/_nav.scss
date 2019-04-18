@@ -79,8 +79,8 @@
 
 .top-link {
   position: fixed;
-  left: 10px;
-  top: 5px;
+  right: 10px;
+  top: 95vh;
   z-index: 3;
   cursor: pointer;
   display: none !important;
@@ -92,16 +92,15 @@
     }
   }
   a {
-    opacity: 0.8;
     color: $white;
     font-size: 1rem;
     background-color: $teal-blue;
     font-weight: 200;
     border-radius: 30px;
     display: block;
-    padding: 0.3rem;
+    padding: 0.3rem 0.5rem;
     &:hover {
-      background-color: $secondary;
+      background-color: $turquoise-blue;
       text-decoration: none;
     }
   }
